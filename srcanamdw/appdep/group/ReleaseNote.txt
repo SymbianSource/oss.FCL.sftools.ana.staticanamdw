@@ -1,0 +1,90 @@
+========================================================================
+RELEASE NOTE FOR APPDEP, 2.2
+========================================================================
+
+Product Description:
+====================
+AppDep is a command line tool that can be used to resolve static
+dependency information of a component within a Symbian OS build (either
+platform or custom). The tool generates a cache file by reading the data
+from all binaries and import libraries within a release, by using an
+external compiler tool set. The use of a cache file is a fast way to make
+a dependency review, such as what dependencies a binary has, and functions
+and ordinals used in a binary, and to generate dependency lists to a
+component or a function. The tool can also be used to view the properties
+of a binary.
+
+Features:
+=========
+- Generates a cache file appdep-cache-symbol-tables.txt which contain
+  symbol tables of all import libraries within a release
+- Generates a cache file appdep-cache-dependencies.txt which contain
+  dependency information of all binaries within a release
+- Reading data from AppDep generated cache files or from platform
+  generated StaticDependencies.txt
+- Include SIS files under analysis  
+- Support for defining multiple target types
+- Support for reading binaries from a release or a debug build
+- Support for reading .lib files or .dso files
+- Display properties of a file
+- Print all static dependencies of a component
+- Print all components that depends on a component
+- Print all functions used by a component
+- Print all components that are using a function
+
+Fixed issues:
+=============
+- Added support for components that include "-" character in the middle of the component name i.e. now 
+  also imported function lines of format '27 imports from libdbus-utils{000a0000}[20010154].dll' are parsed
+  correctly from dump created by elftran.exe.
+- Fixed issue 'command '-showfunctions' may report functions with same ordinal twice' which was due to duplicate
+  import function instances found from cache file. Now the possible duplicate import function instances are detected
+  during cache creation and only one import function instance is stored.
+   
+Enhancements:
+=============
+- Appdep now scans *.agt and *.fxt files as binaries
+- Changed tool to use elftran.exe instead petran.exe for GCCE and RVCT toolchains (petran.exe is still used for GCC).
+
+New Features:
+=============
+
+System Requirements:
+====================
+Basic Requirements:
+- Windows 2000
+- External RVCT or GCCE tool chain installed when Symbian OS 9.x is
+  being used
+- Symbian OS development environment installed including all related
+  import libraries (.lib or .dso)
+
+Compatibility Issues:
+=====================
+N/A
+
+Known Issues:
+=============
+
+RVCT toolset slowness
+---------------------
+- If your installed RVCT toolset does not have a fixed license, it will
+  get a license for each import library every time. This may cause the
+  cache generation become very slow. If this is causing problems, try
+  --uselibs parameter or use GCCE tool chain instead.
+  
+C++filt location when RVCT toolchain is used
+--------------------------------------------
+- When you RVCT toolchain, you must also specify a location to C++filt
+  tool since RVCT toolchain does not provide that. It is recommended to
+  use the cfilt.exe provided with AppDep installed since it has been
+  tested to work correctly. C++filt.exe provided by the platform cannot
+  be used since it is not compatible.
+
+Copyright (c) 2001-2009 Nokia Corporation and/or its subsidiary(-ies).
+All rights reserved.
+
+This component and the accompanying materials are made available
+under the terms of "Eclipse Public License v1.0"
+which accompanies this distribution, and is available
+at the URL "http://www.eclipse.org/legal/epl-v10.html".
+
