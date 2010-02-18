@@ -1,0 +1,4 @@
+('S:\\codescanner\\distcodescanner',
+ False,
+ False,
+ [('codescanner.exe', 'S:\\codescanner\\buildcodescanner/codescanner.exe', 'EXECUTABLE'), ('python25.dll', 'c:\\apps\\actpython\\python25.dll', 'BINARY'), ('MSVCR71.dll', 'C:\\WINNT\\system32\\MSVCR71.dll', 'BINARY'), ('unicodedata', 'c:\\apps\\actpython\\DLLs\\unicodedata.pyd', 'EXTENSION'), ('_hashlib', 'c:\\apps\\actpython\\DLLs\\_hashlib.pyd', 'EXTENSION'), ('bz2', 'c:\\apps\\actpython\\DLLs\\bz2.pyd', 'EXTENSION'), ('_ssl', 'c:\\apps\\actpython\\DLLs\\_ssl.pyd', 'EXTENSION'), ('pyexpat', 'c:\\apps\\actpython\\DLLs\\pyexpat.pyd', 'EXTENSION'), ('win32api', 'c:\\apps\\actpython\\lib\\site-packages\\win32\\win32api.pyd', 'EXTENSION'), ('_socket', 'c:\\apps\\actpython\\DLLs\\_socket.pyd', 'EXTENSION'), ('pywintypes25.dll', 'C:\\WINNT\\system32\\pywintypes25.dll', 'BINARY')])

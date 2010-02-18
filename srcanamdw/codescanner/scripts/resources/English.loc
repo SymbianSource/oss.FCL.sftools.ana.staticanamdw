@@ -1,0 +1,534 @@
+#
+# Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+# All rights reserved.
+# 
+# Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+# 
+# * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+# * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+# * Neither the name of Nokia Corporation nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+# 
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
+# THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS 
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+
+# English.loc
+# localised string for Script accessArrayElementWithoutCheck
+
+stringPool[ "accessArrayElementWithoutCheck!title" ]       = "Array element accessed by At() function without checking index is within array range"
+stringPool[ "accessArrayElementWithoutCheck!description" ] = "Whenever an element in an array is accessed, the index should be checked to ensure that it is less than array.Count(). CodeScanner checks for explicit calls to a Count() function; so if the array index is checked in a different way, it gives false positives. Accessing an invalid index can cause a panic."
+stringPool[ "accessArrayElementWithoutCheck!ideTitle" ]    = "array element accessed by At() function without checking index is within array range"
+
+# localised string for Script accessArrayElementWithoutCheck2
+stringPool[ "accessArrayElementWithoutCheck2!title" ]       = "Array element accessed by [] without checking range"
+stringPool[ "accessArrayElementWithoutCheck2!description" ] = "Whenever an element in an array is accessed, the index should first be checked to ensure that it is within range. CodeScanner checks for explicit calls to a Count() or Length() function; so if the array index is checked in a different way, it gives false positives. Accessing an invalid index can cause a panic."
+stringPool[ "accessArrayElementWithoutCheck2!ideTitle" ]    = "array element accessed by [] without checking range"
+
+# localised string for Script activestart
+stringPool[ "activestart!title" ]       = "Using CActiveScheduler::Start"
+stringPool[ "activestart!description" ] = "Using CActiveScheduler::Start() can mean that something asynchronous is being made synchronous. Instead, use active objects correctly in an asynchronous way."
+stringPool[ "activestart!ideTitle" ]    = "using CActiveScheduler::Start"
+
+# localised string for Script activestop
+stringPool[ "activestop!title" ]       = "Using CActiveScheduler::Stop"
+stringPool[ "activestop!description" ] = "Using CActiveScheduler::Stop() can mean that something asynchronous is being made synchronous. Instead, use active objects correctly in an asynchronous way."
+stringPool[ "activestop!ideTitle" ]    = "using CActiveScheduler::Stop"
+
+# localised string for Script arraypassing
+stringPool[ "arraypassing!title" ]       = "Passing arrays by value rather than reference"
+stringPool[ "arraypassing!description" ] = "Passing arrays by value causes the array to be copied needlessly, which takes up time and memory. For efficiency, references should be used."
+stringPool[ "arraypassing!ideTitle" ]    = "passing arrays by value rather than reference"
+
+# localised string for Script arrayptrcleanup
+stringPool[ "arrayptrcleanup!title" ]       = "Using local CArrayPtr classes without cleanup items"
+stringPool[ "arrayptrcleanup!description" ] = "It is not enough to push a local CArrayPtr class onto the cleanup stack. A TCleanupItem and callback function must be used to avoid leaking the elements."
+stringPool[ "arrayptrcleanup!ideTitle" ]    = "using local CArrayPtr classes without cleanup items"
+
+# localised string for Script assertdebuginvariant
+stringPool[ "assertdebuginvariant!title" ]       = "__ASSERT_DEBUG with User::Invariant"
+stringPool[ "assertdebuginvariant!description" ] = "Replace __ASSERT_DEBUG(<condition>, User::Invariant()) with ASSERT(<condition>), because it is easier to read."
+stringPool[ "assertdebuginvariant!ideTitle" ]    = "__ASSERT_DEBUG with User::Invariant"
+
+# localised string for Script baddefines
+stringPool[ "baddefines!title" ]       = "Lowercase definition names"
+stringPool[ "baddefines!description" ] = "Badly-named definitions makes the code harder to maintain and can lead to defects."
+stringPool[ "baddefines!ideTitle" ]    = "lowercase definition names"
+
+# localised string for Script baseconstruct
+stringPool[ "baseconstruct!title" ]       = "Leaving function called before BaseConstructL()"
+stringPool[ "baseconstruct!description" ] = "If a leave occurs before BaseConstructL() is called, the system can panic because it is trying to clean up an application that has not been fully initialised."
+stringPool[ "baseconstruct!ideTitle" ]    = "leaving method called before BaseConstructL"
+
+# localised string for Script callActiveObjectWithoutCheckingOrStopping
+stringPool[ "callActiveObjectWithoutCheckingOrStopping!title" ]       = "Active object called without checking whether it is active or canceling it first"
+stringPool[ "callActiveObjectWithoutCheckingOrStopping!description" ] = "If an active object is started twice, a panic occurs. CodeScanner picks out places where there is a call to a Start(), Queue(), or After() function on a member variable, without a previous call to IsActive(), Cancel(), or Stop(). In general, if starting a timer, there should at least be a call to IsActive() to ensure that the timer is not already running."
+stringPool[ "callActiveObjectWithoutCheckingOrStopping!ideTitle" ]    = "active object called without checking whether it is active or canceling it first"
+
+# localised string for Script changenotification
+stringPool[ "changenotification!title" ]       = "Using RSAVarChangeNotify to see System Agent changes"
+stringPool[ "changenotification!description" ] = "When watching for System Agent changes, use RSystemAgent rather than RSAVarChangeNotify, which can fail."
+stringPool[ "changenotification!ideTitle" ]    = "using RSAVarChangeNotify to see System Agent changes"
+
+# localised string for Script cleanup
+stringPool[ "cleanup!title" ]       = "CleanupStack::Pop(AndDestroy) parameters"
+stringPool[ "cleanup!description" ] = "These functions should be called with explicit variable parameters to avoid misalignment."
+stringPool[ "cleanup!ideTitle" ]    = "missing CleanupStack::Pop parameter"
+
+# localised string for Script commentcode
+stringPool[ "commentcode!title" ]       = "Commented-out code"
+stringPool[ "commentcode!description" ] = "Instances of code that are commented out make the code hard to maintain and to interpret clearly. The commented out code should be removed. Any requirement to rediscover old code should be made through source control and not by trawling through commented-out code."
+stringPool[ "commentcode!ideTitle" ]    = "commented-out code"
+
+# localised string for Script connect
+stringPool[ "connect!title" ]       = "Ignoring Connect() return value"
+stringPool[ "connect!description" ] = "Ignoring the error returned from Connect() functions means that if the Connect() function fails due to OOM or other problems, the next access to the resource will panic."
+stringPool[ "connect!ideTitle" ]    = "ignoring Connect() return value"
+
+# localised string for Script ConnectAndDontCloseMemberVariable
+stringPool[ "ConnectAndDontCloseMemberVariable!title" ]       = "Calling Connect() or Open() on a member variable without calling Close() in the destructor"
+stringPool[ "ConnectAndDontCloseMemberVariable!description" ] = "If Connect() or Open() is called on any member variable, then Close() must be called in the destructor."
+stringPool[ "ConnectAndDontCloseMemberVariable!ideTitle" ]    = "calling Connect() or Open() on a member variable without calling Close() in the destructor"
+
+# localised string for Script constnames
+stringPool[ "constnames!title" ]       = "Badly-named constants"
+stringPool[ "constnames!description" ] = "Badly-named constant will make the source code harder to maintain and make defects more likely."
+stringPool[ "constnames!ideTitle" ]    = "badly-named constant"
+
+# localised string for Script consttdescptr
+stringPool[ "consttdescptr!title" ]       = "Const descriptor pointer as argument"
+stringPool[ "consttdescptr!description" ] = "Use \"const TDesC&\" instead of \"const TDesC*\"."
+stringPool[ "consttdescptr!ideTitle" ]    = "const descriptor pointer as argument"
+
+# localised string for Script controlornull
+stringPool[ "controlornull!title" ]       = "Accessing return value of ControlOrNull()"
+stringPool[ "controlornull!description" ] = "The return value might be NULL, so it should be checked before access."
+stringPool[ "controlornull!ideTitle" ]    = "accessing return value of ControlOrNull()"
+
+# localised string for Script crepository
+stringPool[ "crepository!title" ]       = "Ignoring CRepository::get() return value"
+stringPool[ "crepository!description" ] = "Independent application cannot assume that the Central Repository is set up fully. This means the return value of CRepository::get() cannot be ignored."
+stringPool[ "crepository!ideTitle" ]    = "ignoring CRepository::get() return value"
+
+# localised string for Script ctltargettype
+stringPool[ "ctltargettype!title" ]       = "Use of targettype ctl"
+stringPool[ "ctltargettype!description" ] = "The ctl target type should not be used. Instead, use DLL and explicitly refer to the Control Panel's DEF file. Note: Code that causes this issue only needs attention if it is found in code developed for Nokia Series 90 code that has extra exports for resetting the Control Panel item's data."
+stringPool[ "ctltargettype!ideTitle" ]    = "use of targettype ctl"
+
+# localised string for Script customizableicons
+stringPool[ "customizableicons!title" ]       = "Use of customizable icons"
+stringPool[ "customizableicons!description" ] = "Due to device customization requirements, independent application must not remove any customization done by the variant team. This means independent application cannot include customizable icons."
+stringPool[ "customizableicons!ideTitle" ]    = "use of customizable icons"
+
+# localised string for Script debugrom
+stringPool[ "debugrom!title" ]       = "Debug components in ROM"
+stringPool[ "debugrom!description" ] = "Debug versions of components in the ROM could mean that ROM space is being taken up with debugging information or that logging is being put out. Release versions should be in the ROM unless there is a good reason why they are not."
+stringPool[ "debugrom!ideTitle" ]    = "debug components in ROM"
+
+# localised string for Script declarename
+stringPool[ "declarename!title" ]       = "Use of __DECLARE_NAME"
+stringPool[ "declarename!description" ] = "The __DECLARE_NAME macro is historical and serves no purpose anymore and should be removed."
+stringPool[ "declarename!ideTitle" ]    = "use of __DECLARE_NAME"
+
+# localised string for Script deleteMemberVariable
+stringPool[ "deleteMemberVariable!title" ]       = "Member variable deleted incorrectly"
+stringPool[ "deleteMemberVariable!description" ] = "When a member variable is deleted, it should be assigned either to NULL or to another value. This prevents accidental access of the deleted object. If a NewL() or other leaving function is called to reassign the member variable, it should first be assigned to NULL in case that function leaves."
+stringPool[ "deleteMemberVariable!ideTitle" ]    = "member variable deleted incorrectly"
+
+# localised string for Script destructor
+stringPool[ "destructor!title" ]       = "Pointer access in destructors"
+stringPool[ "destructor!description" ] = "Accessing pointers to objects in destructors without checking whether they are not NULL could result in a panic because they may not have been constructed. The pointers should be checked to determine whether they are owned objects. If they are not owned, they should really be references rather than pointers."
+stringPool[ "destructor!ideTitle" ]    = "destructor is accessing/dereferencing data member"
+
+# localised string for Script doubleSemiColon
+stringPool[ "doubleSemiColon!title" ]       = "Use of double semicolon"
+stringPool[ "doubleSemiColon!description" ] = "Double semicolons at the end of a line are not necessary and cause a CodeWarrior compiler error."
+stringPool[ "doubleSemiColon!ideTitle" ]    = "use of double semicolon"
+
+# localised string for Script driveletters
+stringPool[ "driveletters!title" ]       = "Hard-coded drive letters"
+stringPool[ "driveletters!description" ] = "Drive letters should not be hard-coded."
+stringPool[ "driveletters!ideTitle" ]    = "hard-coded drive letters"
+
+# localised string for Script eikbuttons
+stringPool[ "eikbuttons!title" ]       = "Checks that the R_EIK_BUTTONS_* resources are not being used"
+stringPool[ "eikbuttons!description" ] = "R_EIK_BUTTONS_* resources will not be internationalised, and should not be used. Instead, create your own button resource. No button resource (or indeed, rls string) should be used in more than one location. Note: This issue is only relevant for development on Nokia platforms."
+stringPool[ "eikbuttons!ideTitle" ]    = "use of R_EIK_BUTTONS_ resources"
+
+# localised string for Script eikonenvstatic
+stringPool[ "eikonenvstatic!title" ]       = "Using CEikonEnv::Static"
+stringPool[ "eikonenvstatic!description" ] = "CEikonEnv::Static() calls should be kept to a minimum, because this involves TLS. All applications, controls, and dialogs already have a pointer to the singleton instance of CEikonEnv as a member variable and so do not need to find it again. If a class does not have access to a CEikonEnv and needs to use it repeatedly, then it should store one."
+stringPool[ "eikonenvstatic!ideTitle" ]    = "using CEikonEnv::Static"
+
+# localised string for Script enummembers
+stringPool[ "enummembers!title" ]       = "Enums with badly-named members"
+stringPool[ "enummembers!description" ] = "Enums with badly-named members make the code harder to maintain and may cause defects."
+stringPool[ "enummembers!ideTitle" ]    = "enum with badly-named member"
+
+# localised string for Script enumnames
+stringPool[ "enumnames!title" ]       = "Badly-named enums"
+stringPool[ "enumnames!description" ] = "Badly-named enums make the code harder to maintain and may cause defects."
+stringPool[ "enumnames!ideTitle" ]    = "badly-named enum"
+
+# localised string for Script exportinline
+stringPool[ "exportinline!title" ]       = "Exporting inline functions"
+stringPool[ "exportinline!description" ] = "Inline functions should not be exported because this can cause those that link to the DLL to fail to build. Exporting functions limits the changes that can be made in the future due to considerations of binary-compatibility."
+stringPool[ "exportinline!ideTitle" ]    = "exporting inline functions"
+
+# localised string for Script exportpurevirtual
+stringPool[ "exportpurevirtual!title" ]       = "Exporting pure virtual functions"
+stringPool[ "exportpurevirtual!description" ] = "Symbian recommends against the exportation of pure virtual functions."
+stringPool[ "exportpurevirtual!ideTitle" ]    = "exporting pure virtual functions"
+
+# localised string for Script externaldriveletters
+# stringPool[ "externaldriveletters!title" ]       = "Hard-coded external drive letters"
+# stringPool[ "externaldriveletters!description" ] = "External drive letters should not be hard-coded as the external drive may change between platforms and releases. This may cause confusion over ownership leading to classes being deleted erroneously and leaks occurring."
+# stringPool[ "externaldriveletters!ideTitle" ]    = "hard-coded external drive letter"
+
+# localised string for Script flags
+stringPool[ "flags!title" ]       = "Use of R&D flags or feature flags"
+stringPool[ "flags!description" ] = "Independent application must not use R&D flags nor feature flags via preprocessor statements in the source code. This means bld*.hrh and productvariant.hrh should not be used."
+stringPool[ "flags!ideTitle" ]    = "use of R&D flags or feature flags"
+
+# localised string for Script foff
+stringPool[ "foff!title" ]       = "Use of _FOFF"
+stringPool[ "foff!description" ] = "_FOFF allows access to data in classes that were not intended for public access. This may cause problems, especially when the location of the data changes."
+stringPool[ "foff!ideTitle" ]    = "use of _FOFF"
+
+# localised string for Script forbiddenwords
+stringPool[ "forbiddenwords!title" ]       = "Use of forbidden words in header files"
+stringPool[ "forbiddenwords!description" ] = "Some words should not be used in header files; especially those header files destined for external release. Some words may be forbidden for legal reasons or for platform consistency. Where they exist, alternative allowed words should be used. For example, \"NMP\" and \"Nokia Mobile Phones\" should be replaced by \"Nokia\"."
+stringPool[ "forbiddenwords!ideTitle" ]    = "use of forbidden words in header files"
+
+# localised string for Script forgottoputptroncleanupstack
+stringPool[ "forgottoputptroncleanupstack!title" ]       = "Neglected to put variable on cleanup stack"
+stringPool[ "forgottoputptroncleanupstack!description" ] = "If a variable is not put on the cleanup stack and a leaving function or ELeave is called, a memory leak occurs. CodeScanner occasionally gives false positives for this issue. Individual cases should be investigated."
+stringPool[ "forgottoputptroncleanupstack!ideTitle" ]    = "neglected to put variable on cleanup stack"
+
+# localised string for Script friend
+stringPool[ "friend!title" ]       = "Use of friends"
+stringPool[ "friend!description" ] = "The friend directive is often misused and can indicate problems in the OO design."
+stringPool[ "friend!ideTitle" ]    = "use of friends"
+
+# localised string for Script goto
+stringPool[ "goto!title" ]       = "Use of goto"
+stringPool[ "goto!description" ] = "Goto should not be used if it can be avoided because it makes the program flow more difficult to follow."
+stringPool[ "goto!ideTitle" ]    = "use of goto"
+
+# localised string for Script ifassignments
+stringPool[ "ifassignments!title" ]       = "Assignment in an If statement"
+stringPool[ "ifassignments!description" ] = "Assignments inside an If statement often indicate that the assignment was not intended. Even if the assignment was intended, it is clearer to separate out the assignment from the conditional. The script that detects such occurrences has a few false positives when the action statements are on the same line as the conditional check. However, this is also against the coding standards and the action should be on a separate line."
+stringPool[ "ifassignments!ideTitle" ]    = "assignment in an If statement"
+
+# localised string for Script ifpreprocessor
+stringPool[ "ifpreprocessor!title" ]       = "Use of #if in .h files"
+stringPool[ "ifpreprocessor!description" ] = "#if in header files should only be used before the main include guards and not around #include statements or around functional blocks in class definitions. The reason for the latter is to aid readability and to make BC breaks more difficult."
+stringPool[ "ifpreprocessor!ideTitle" ]    = "use of #if in .h files (not as main include guards)"
+
+# localised string for Script inheritanceorder
+stringPool[ "inheritanceorder!title" ]       = "Incorrect inheritance order of M and C classes"
+stringPool[ "inheritanceorder!description" ] = "If a C class inherits first from an M class and then a C class, a panic can occur when trying to pop a CBase pointer pointing to such a class from the cleanup stack when in fact a pointer pointing to the first predecessor, the mixin class, was popped instead."
+stringPool[ "inheritanceorder!ideTitle" ]    = "incorrect inheritance order of M and C classes"
+
+# localised string for Script intleaves
+stringPool[ "intleaves!title" ]       = "Methods that leave AND return a TInt error"
+stringPool[ "intleaves!description" ] = "Returning an error code as well as being able to leave is problematical for the caller. It is preferable to adhere to one method of returning the error. Note: CodeScanner is likely to return false positives for this situation, because some returned TInt values will not be error codes."
+stringPool[ "intleaves!ideTitle" ]    = "methods that leave AND return a TInt error"
+
+# localised string for Script jmp
+stringPool[ "jmp!title" ]       = "Use of setjmp and/or longjmp"
+stringPool[ "jmp!description" ] = "Using setjmp and/or longjmp makes code less maintainable."
+stringPool[ "jmp!ideTitle" ]    = "use of setjmp and/or longjmp"
+
+# localised string for Script leave
+stringPool[ "leave!title" ]       = "Leaving functions called in non-leaving functions"
+stringPool[ "leave!description" ] = "Non-leaving functions should not call leaving functions. Note: Operator functions are considered to be able to leave when scanning the code inside them."
+stringPool[ "leave!ideTitle" ]    = "leaving function called in non-leaving function"
+
+# localised string for Script LeaveNoError
+stringPool[ "LeaveNoError!title" ]       = "Leaving with KErrNone"
+stringPool[ "LeaveNoError!description" ] = "Leaving with KErrNone usually indicates that there is a makeshift way around a design issue rather than a true and proper fix to the architecture."
+stringPool[ "LeaveNoError!ideTitle" ]    = "leaving with KErrNone"
+
+# localised string for Script leavingoperators
+stringPool[ "leavingoperators!title" ]       = "Leaving functions called in operator functions"
+stringPool[ "leavingoperators!description" ] = "It is not obvious that operator functions can leave. Calling leaving functions in operator functions should be considered carefully."
+stringPool[ "leavingoperators!ideTitle" ]    = "leaving functions called in operator functions"
+
+# localised string for Script LFunctionCantLeave
+stringPool[ "LFunctionCantLeave!title" ]       = "L-functions that cannot leave"
+stringPool[ "LFunctionCantLeave!description" ] = "A function should not be named with an 'L' if it cannot leave. The only exception is in virtual functions where the function name is defined in the base class so the L cannot be removed. For example, RunL()."
+stringPool[ "LFunctionCantLeave!ideTitle" ]    = "L-functions that cannot leave"
+
+# localised string for Script longlines
+stringPool[ "longlines!title" ]       = "Overly long lines of code"
+stringPool[ "longlines!description" ] = "Lines longer than about 100 characters can indicate messy or badly-structured code that is hard to maintain."
+stringPool[ "longlines!ideTitle" ]    = "overly long line of code"
+
+# localised string for Script magicnumbers
+stringPool[ "magicnumbers!title" ]       = "Use of magic numbers"
+stringPool[ "magicnumbers!description" ] = "Magic numbers - that is, numbers that are hard-coded into the source code and instead of being presented as constants - make code difficult to maintain and give no indication of why a calculation is the way it is. Magic numbers should be replaced with named constants."
+stringPool[ "magicnumbers!ideTitle" ]    = "use of magic numbers"
+
+# localised string for Script mclassdestructor
+stringPool[ "mclassdestructor!title" ]       = "M class has destructor"
+stringPool[ "mclassdestructor!description" ] = "M classes should not contain a destructor."
+stringPool[ "mclassdestructor!ideTitle" ]    = "M class has destructor"
+
+# localised string for Script memberlc
+stringPool[ "memberlc!title" ]       = "Assigning LC methods to member variables"
+stringPool[ "memberlc!description" ] = "Objects on the cleanup stack should not be assigned to member variables"
+stringPool[ "memberlc!ideTitle" ]    = "LC method assigned to data member"
+
+# localised string for Script membervariablecallld
+stringPool[ "membervariablecallld!title" ]       = "Calling LD function on member variable"
+stringPool[ "membervariablecallld!description" ] = "LD functions should not be called on a member variable because ownership can be unclear and may lead to double deletes."
+stringPool[ "membervariablecallld!ideTitle" ]    = "calling LD function on member variable"
+
+# localised string for Script missingcancel
+stringPool[ "missingcancel!title" ]       = "Cancel() not called in active object's destructor"
+stringPool[ "missingcancel!description" ] = "Cancel() should always be called in active object's destructor to cancel an outstanding request if there is one. If there is no request pending then Cancel() just does nothing, but if we do not call Cancel() when having an outstanding request a panic will be raised. CodeScanner occasionally gives false positives for this issue. Individual cases should be investigated."
+stringPool[ "missingcancel!ideTitle" ]    = "Cancel() not called in active object's destructor"
+
+# localised string for Script missingcclass
+stringPool[ "missingcclass!title" ]       = "C class not inheriting from another C class"
+stringPool[ "missingcclass!description" ] = "All C classes should inherit from another C class to ensure that all data members are zeroed."
+stringPool[ "missingcclass!ideTitle" ]    = "C class not inheriting from another C class"
+
+# localised string for Script mmpsourcepath
+stringPool[ "mmpsourcepath!title" ]       = "Use of absolute path names in MMP files"
+stringPool[ "mmpsourcepath!description" ] = "Use of absolute paths in MMP files makes it impossible to relocate the source. Relative paths should be used instead."
+stringPool[ "mmpsourcepath!ideTitle" ]    = "use of absolute path names in MMP files"
+
+# localised string for Script multilangrsc
+stringPool[ "multilangrsc!title" ]       = "Not using BaflUtils::NearestLanguageFile() when loading a resource file"
+stringPool[ "multilangrsc!description" ] = "If AddResourceFileL() is used without first using BaflUtils::NearestLanguageFile(), then not all language versions of resources will be picked up."
+stringPool[ "multilangrsc!ideTitle" ]    = "not using BaflUtils::NearestLanguageFile() when loading a resource file"
+
+# localised string for Script multipledeclarations
+stringPool[ "multipledeclarations!title" ]       = "Multiple declarations on one line"
+stringPool[ "multipledeclarations!description" ] = "Multiple declarations on one line can be confusing. Separate them out so that each declaration is on its own separate line."
+stringPool[ "multipledeclarations!ideTitle" ]    = "multiple declarations on one line"
+
+# localised string for Script multipleinheritance
+stringPool[ "multipleinheritance!title" ]       = "Non M-class multiple inheritance"
+stringPool[ "multipleinheritance!description" ] = "It is bad Symbian OS practice to derive from two classes that have implemented functions. Complex behaviour that was not intended can result."
+stringPool[ "multipleinheritance!ideTitle" ]    = "multiple inheritance from non M-classes"
+
+# localised string for Script mydocs
+stringPool[ "mydocs!title" ]       = "Hard-coded mydocs directory strings"
+stringPool[ "mydocs!description" ] = "The mydocs directory is subject to change so should not be referenced directly. Note: @	This issue will only occur in code developed for the Nokia Series 90 platform."
+stringPool[ "mydocs!ideTitle" ]    = "hard-coded mydocs directory strings"
+
+# localised string for Script namespace
+stringPool[ "namespace!title" ]       = "Use of namespace"
+stringPool[ "namespace!description" ] = "Namespaces are often used to work around a poor naming convention."
+stringPool[ "namespace!ideTitle" ]    = "use of namespace"
+
+# localised string for Script newlreferences
+stringPool[ "newlreferences!title" ]       = "NewL() returning a reference"
+stringPool[ "newlreferences!description" ] = "NewL() and NewLC() functions should return a pointer to an object created on the heap."
+stringPool[ "newlreferences!ideTitle" ]    = "NewL() returning a reference"
+
+# localised string for Script noleavetrap
+stringPool[ "noleavetrap!title" ]       = "TRAP used with no leaving functions"
+stringPool[ "noleavetrap!description" ] = "A TRAP is unnecessary if there are no leaving functions."
+stringPool[ "noleavetrap!ideTitle" ]    = "TRAP contains no leaving functions"
+
+# localised string for Script nonconsthbufc
+stringPool[ "nonconsthbufc!title" ]       = "Non-const HBufC* parameter passing"
+stringPool[ "nonconsthbufc!description" ] = "HBufC* parameters should almost always be passed as a const pointer."
+stringPool[ "nonconsthbufc!ideTitle" ]    = "non-const HBufC* parameter passing"
+
+# localised string for Script nonconsttdesc
+stringPool[ "nonconsttdesc!title" ]       = "Non-const TDesC& parameter passing"
+stringPool[ "nonconsttdesc!description" ] = "TDesC& parameters should be passed as a const. If it is not, it may indicate that the coder does not understand descriptors, for example, passing descriptors by value."
+stringPool[ "nonconsttdesc!ideTitle" ]    = "non-const TDesC& parameter passing"
+
+# localised string for Script nonleavenew
+stringPool[ "nonleavenew!title" ]       = "Use of new without (ELeave)"
+stringPool[ "nonleavenew!description" ] = "Using new without (ELeave) is only used in special circumstances. The leaving variant should typically be used in preference. A common exception is for application creation, where NULL is returned for failed creation."
+stringPool[ "nonleavenew!ideTitle" ]    = "new used without (ELeave)"
+
+# localised string for Script nonunicodeskins
+stringPool[ "nonunicodeskins!title" ]       = "Non-Unicode skins"
+stringPool[ "nonunicodeskins!description" ] = "Skin definition files (SKN, SKE) must be Unicode. Note: Code that causes this issue only needs attention if it is found in code developed for Nokia Series 90 code."
+stringPool[ "nonunicodeskins!ideTitle" ]    = "non-Unicode skins"
+
+# localised string for Script null
+stringPool[ "null!title" ]       = "NULL equality check"
+stringPool[ "null!description" ] = "There is no need to compare pointer variables to NULL. Use If(ptr)."
+stringPool[ "null!ideTitle" ]    = "NULL equality check"
+
+# localised string for Script open
+stringPool[ "open!title" ]       = "Ignoring Open() return value"
+stringPool[ "open!description" ] = "Ignoring the return value from Open() functions (due to OOM, etc.) means that when the resource is accessed next, a panic will result."
+stringPool[ "open!ideTitle" ]    = "ignoring Open() return value"
+
+# localised string for Script pointertoarrays
+stringPool[ "pointertoarrays!title" ]       = "Pointer to arrays as members of a C class"
+stringPool[ "pointertoarrays!description" ] = "In C classes, there is no need to use pointers to arrays as data members. Instead, use the arrays themselves. Using pointers leads to obscure notation like \"(*array)[n]\" for the more usual \"array[n]\". It also makes it necessary to explicitly delete the arrays in the destructor. Using the arrays themselves also simplifies notation, reduces indirection, and reduces heap fragmentation."
+stringPool[ "pointertoarrays!ideTitle" ]    = "pointer to arrays as members of a C class"
+
+# localised string for Script pragmadisable
+stringPool[ "pragmadisable!title" ]       = "Use of #pragma warning"
+stringPool[ "pragmadisable!description" ] = "Disabling warnings can lead to problems, because the warnings are probably there for a reason."
+stringPool[ "pragmadisable!ideTitle" ]    = "use of #pragma warning"
+
+# localised string for Script pragmamessage
+stringPool[ "pragmamessage!title" ]       = "Use of #pragma message"
+stringPool[ "pragmamessage!description" ] = "#pragma messages during the build stage can interfere with the build log parsing."
+stringPool[ "pragmamessage!ideTitle" ]    = "use of #pragma message"
+
+# localised string for Script pragmaother
+stringPool[ "pragmaother!title" ]       = "Use of #pragma other than warning and message"
+stringPool[ "pragmaother!description" ] = "#pragma directives should only be used in very edge cases (for example, functions consisting of inline assembler without explicit return statements) because, typically, their usage masks valid build warnings and error messages."
+stringPool[ "pragmaother!ideTitle" ]    = "use of #pragma other than warning and message"
+
+# localised string for Script privateinheritance
+stringPool[ "privateinheritance!title" ]       = "Use of private inheritance"
+stringPool[ "privateinheritance!description" ] = "Classes should not be inherited privately. If public or protected inheritance is not appropriate, consider using an amalgamation; that is, have an object of that type as a member variable."
+stringPool[ "privateinheritance!ideTitle" ]    = "use of private inheritance"
+
+# localised string for Script pushaddrvar
+stringPool[ "pushaddrvar!title" ]       = "Pushing address of a variable onto the cleanup stack"
+stringPool[ "pushaddrvar!description" ] = "If the variable is owned by the code pushing it, it should be stored as a pointer. If it is not, it should not be pushed onto the cleanup stack."
+stringPool[ "pushaddrvar!ideTitle" ]    = "pushing address of a variable onto the cleanup stack"
+
+# localised string for Script pushmember
+stringPool[ "pushmember!title" ]       = "Pushing data members onto the cleanup stack"
+stringPool[ "pushmember!description" ] = "Pushing member variables is likely to lead to double deletes or leakage in certain circumstances and so should be avoided. Even if no panic can result, it is bad practice and makes maintenance more difficult."
+stringPool[ "pushmember!ideTitle" ]    = "data member pushed to cleanup stack"
+
+# localised string for Script readresource
+stringPool[ "readresource!title" ]       = "Using ReadResource() instead of ReadResourceL()"
+stringPool[ "readresource!description" ] = "ReadResourceL() should always be used in preference to ReadResource() because in an error scenario ReadResource() effectively fails silently. If no check is performed on the resulting descriptor afterwards, unexpected states can ensue. These states are often characterized by buffer overflows."
+stringPool[ "readresource!ideTitle" ]    = "Using ReadResource() instead of ReadResourceL()"
+
+# localised string for Script resourcenotoncleanupstack
+stringPool[ "resourcenotoncleanupstack!title" ]       = "Neglected to put resource objects on cleanup stack"
+stringPool[ "resourcenotoncleanupstack!description" ] = "If a stack-based resource object is not put on the cleanup stack with CleanupResetAndDestroyPushL() or CleanupClosePushL(), and a leaving function or ELeave is called, a memory leak occurs. CodeScanner occasionally gives false positives for this issue. Individual cases should be investigated."
+stringPool[ "resourcenotoncleanupstack!ideTitle" ]    = "neglected to put resource objects on cleanup stack"
+
+# localised string for Script resourcesonheap
+stringPool[ "resourcesonheap!title" ]       = "Resource objects on the heap"
+stringPool[ "resourcesonheap!description" ] = "There is very rarely any real need to put R classes on the heap (unless they are not real R classes!).  Doing so can lead to inefficiency and cleanup stack problems."
+stringPool[ "resourcesonheap!ideTitle" ]    = "resource objects on the heap"
+
+# localised string for Script returndescriptoroutofscope
+stringPool[ "returndescriptoroutofscope!title" ]       = "Return descriptor out of scope"
+stringPool[ "returndescriptoroutofscope!description" ] = "Returning a TBuf descriptor that is declared locally takes it out of scope. This can cause a crash on WINSCW, although not on WINS."
+stringPool[ "returndescriptoroutofscope!ideTitle" ]    = "return descriptor out of scope"
+
+# localised string for Script rfs
+stringPool[ "rfs!title" ]       = "Use of non-pointer/reference RFs"
+stringPool[ "rfs!description" ] = "Connecting to an RFs is a time-consuming operation. (It can take approximately 0.1 seconds on some devices.) To minimise wasted time and resources, use the already-connected one in EikonEnv or elsewhere, if possible."
+stringPool[ "rfs!ideTitle" ]    = "use of non-pointer/reference RFs"
+
+# localised string for Script rssnames
+stringPool[ "rssnames!title" ]       = "Duplicate RSS names"
+stringPool[ "rssnames!description" ] = "Resource files with clashing NAME fields can cause the wrong resource file to be accessed. This can lead to incorrect functionality or panics."
+stringPool[ "rssnames!ideTitle" ]    = "duplicate RSS names"
+
+# localised string for Script stringliterals
+stringPool[ "stringliterals!title" ]       = "Use of _L string literals"
+stringPool[ "stringliterals!description" ] = "_L() string literals should be replaced by the _LIT() macro."
+stringPool[ "stringliterals!ideTitle" ]    = "use of _L string literals"
+
+# localised string for Script stringsinresourcefiles
+stringPool[ "stringsinresourcefiles!title" ]       = "Strings in RSS or RA files"
+stringPool[ "stringsinresourcefiles!description" ] = "Strings should not be defined in RSS or RA files. Instead, they should be put in RLS or other localisable files."
+stringPool[ "stringsinresourcefiles!ideTitle" ]    = "strings in RSS or RA files"
+
+# localised string for Script struct
+stringPool[ "struct!title" ]       = "Use of struct"
+stringPool[ "struct!description" ] = "C-style structs should not generally be used. The correct idiom is to use a class with public members. A permissible use of a C-style struct is if it is used to group non-semantically related entities together for convenience, and if a class-related hierarchy would be too heavy-weight."
+stringPool[ "struct!ideTitle" ]    = "use of struct"
+
+# localised string for Script tcclasses
+stringPool[ "tcclasses!title" ]       = "T classes inheriting from C classes"
+stringPool[ "tcclasses!description" ] = "T classes that are derived from C classes may have a complex constructor and so need to be handled differently. It is better to make the T class into a C class, which will make the code easier to maintain."
+stringPool[ "tcclasses!ideTitle" ]    = "T class inherits from C class"
+
+# localised string for Script tclassdestructor
+stringPool[ "tclassdestructor!title" ]       = "T class has destructor"
+stringPool[ "tclassdestructor!description" ] = "T classes should not have a destructor"
+stringPool[ "tclassdestructor!ideTitle" ]    = "T class has destructor"
+
+# localised string for Script todocomments
+stringPool[ "todocomments!title" ]       = "\"To do\" comments"
+stringPool[ "todocomments!description" ] = "\"To do\" comments in code suggest that it is not finished."
+stringPool[ "todocomments!ideTitle" ]    = "\"To do\" comment"
+
+# localised string for Script trapcleanup
+stringPool[ "trapcleanup!title" ]       = "Use of LC function in TRAPs"
+stringPool[ "trapcleanup!description" ] = "You cannot trap something that leaves something on the cleanup stack because it will panic."
+stringPool[ "trapcleanup!ideTitle" ]    = "LC function used in TRAP"
+
+# localised string for Script trapeleave
+stringPool[ "trapeleave!title" ]       = "Trapping new(ELeave)"
+stringPool[ "trapeleave!description" ] = "The trapping of a \"new(ELeave) CXxx\" call is redundant and wasteful as the code to support TRAP is surprisingly large. If the instantiation process really needs not to leave, use \"new CXxx\" and check for NULL."
+stringPool[ "trapeleave!ideTitle" ]    = "trapping new(ELeave)"
+
+# localised string for Script traprunl
+stringPool[ "traprunl!title" ]       = "Trapping of (Do)RunL() rather than using RunError()"
+stringPool[ "traprunl!description" ] = "The RunError() function should be used rather than the CActive derivative using its own TRAPD solution within a RunL()."
+stringPool[ "traprunl!ideTitle" ]    = "trapping of (Do)RunL() rather than using RunError()"
+
+# localised string for Script trspassing
+stringPool[ "trspassing!title" ]       = "Passing TRequestStatus parameters by value"
+stringPool[ "trspassing!description" ] = "TRequestStatus parameters should be passed by reference. If TRequestStatus is just being used as an error code, then convert it to a TInt."
+stringPool[ "trspassing!ideTitle" ]    = "passing TRequestStatus parameters by value"
+
+# localised string for Script uids
+stringPool[ "uids!title" ]       = "Duplicate UIDs"
+stringPool[ "uids!description" ] = "UIDs must be unique."
+stringPool[ "uids!ideTitle" ]    = "duplicate UIDs"
+
+# localised string for Script uncompressedaif
+stringPool[ "uncompressedaif!title" ]       = "Uncompressed AIFs in ROM"
+stringPool[ "uncompressedaif!description" ] = "AIF files should be referenced as \"AIF=\" rather than \"data=\" or \"file=\" otherwise they can bloat the ROM size and slow down application loading."
+stringPool[ "uncompressedaif!ideTitle" ]    = "uncompressed AIFs in ROM"
+
+# localised string for Script uncompressedbmp
+stringPool[ "uncompressedbmp!title" ]       = "Uncompressed bitmaps in ROM"
+stringPool[ "uncompressedbmp!description" ] = "Using uncompressed bitmaps can significantly bloat the size of ROM images. All occurrences of \"bitmap=\" in iby/hby files should be replaced with \"auto-bitmap=\". Also, including bitmaps using \"data=\" or \"file=\" causes bloat and load-speed reductions."
+stringPool[ "uncompressedbmp!ideTitle" ]    = "uncompressed bitmaps in ROM"
+
+# localised string for Script unicodesource
+stringPool[ "unicodesource!title" ]       = "Unicode source files"
+stringPool[ "unicodesource!description" ] = "Having Unicode source files (CPP, H, RLS, LOC, RSS, and RA) will break most build systems."
+stringPool[ "unicodesource!ideTitle" ]    = "Unicode source files"
+
+# localised string for Script userafter
+stringPool[ "userafter!title" ]       = "Use of User::After"
+stringPool[ "userafter!description" ] = "Generally, User::After() functions are used to skirt around timing problems. Typically, they should be removed and the defects fixed properly: that is, by waiting for the correct event to continue execution."
+stringPool[ "userafter!ideTitle" ]    = "use of User::After"
+
+# localised string for Script userfree
+stringPool[ "userfree!title" ]       = "Using User::Free directly"
+stringPool[ "userfree!description" ] = "User::Free() should never be called, because all objects free their memory on deletion; their destructors are not called and further resources cannot be freed or closed. This function should be removed and replaced by explicit deletes."
+stringPool[ "userfree!ideTitle" ]    = "using User::Free directly"
+
+# localised string for Script userWaitForRequest
+stringPool[ "userWaitForRequest!title" ]       = "Use of User::WaitForRequest"
+stringPool[ "userWaitForRequest!description" ] = "User::WaitForRequest() should not generally be used in UI code because the UI will not respond to redraw events while its thread is stopped."
+stringPool[ "userWaitForRequest!ideTitle" ]    = "use of User::WaitForRequest"
+
+# localised string for Script variablenames
+stringPool[ "variablenames!title" ]       = "Local variables with member/argument names"
+stringPool[ "variablenames!description" ] = "Local variable names should be of the form localVariable and not aLocalVar or iLocalVar. Badly-named variables can be misleading and cause maintenance and coding errors."
+stringPool[ "variablenames!ideTitle" ]    = "local variables with member/argument names"
+
+# localised string for Script voidparameter
+stringPool[ "voidparameter!title" ]       = "Void parameter explicitly declared"
+stringPool[ "voidparameter!description" ] = "Declaring a void parameter is unnecessary. A function declared as DoSomething(void) may as well be declared as DoSomething(). Void casts are also unnecessary."
+stringPool[ "voidparameter!ideTitle" ]    = "void parameter explicitly declared"
+
+# localised string for Script worryingcomments
+stringPool[ "worryingcomments!title" ]       = "Worrying comments"
+stringPool[ "worryingcomments!description" ] = "Typically, exclamation and question marks in comments indicate that something odd is in the code or that it is unfinished or not understood fully."
+stringPool[ "worryingcomments!ideTitle" ]    = "worrying comments"
+

@@ -1,0 +1,11 @@
+('S:\\codescanner\\buildcodescanner\\out3.pkg',
+ {'BINARY': 1,
+  'DATA': 1,
+  'EXECUTABLE': 1,
+  'EXTENSION': 1,
+  'PYMODULE': 1,
+  'PYSOURCE': 1},
+ [('out1.pyz', 'S:\\codescanner\\buildcodescanner\\out1.pyz', 'PYZ'), ('iu', 'S:\\codescanner\\pyinstaller\\iu.pyc', 'PYMODULE'), ('struct', 'c:\\apps\\actpython\\lib\\struct.pyc', 'PYMODULE'), ('archive', 'S:\\codescanner\\pyinstaller\\archive.pyc', 'PYMODULE'), ('_mountzlib', 'pyinstaller\\support\\_mountzlib.py', 'PYSOURCE'), ('useUnicode', 'pyinstaller\\support\\useUnicode.py', 'PYSOURCE'), ('codescanner', 'codescanner.py', 'PYSOURCE'), ('python25.dll', 'c:\\apps\\actpython\\python25.dll', 'BINARY'), ('MSVCR71.dll', 'C:\\WINNT\\system32\\MSVCR71.dll', 'BINARY')],
+ 1,
+ False,
+ False)

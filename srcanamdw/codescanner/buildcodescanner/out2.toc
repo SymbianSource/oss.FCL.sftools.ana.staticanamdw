@@ -1,0 +1,8 @@
+('S:\\codescanner\\buildcodescanner/codescanner.exe',
+ True,
+ False,
+ None,
+ None,
+ False,
+ False,
+ 1259836213)

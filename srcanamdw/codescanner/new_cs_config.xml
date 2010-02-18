@@ -1,0 +1,192 @@
+<!-- This is a configuration file for Codescanner from Nokia. -->
+
+<codescannerConfig>
+
+	<arguments>
+		<!-- Arguments being passed to CodeScanner -->
+
+		<outputformat>html</outputformat>
+		<timestampedoutput>on</timestampedoutput>
+	</arguments>
+
+	<sources>
+		<!-- Source files matching any of the exclude patterns below will not be scanned -->
+
+		<exclude>.*\.au</exclude>
+		<exclude>.*\.avi</exclude>
+		<exclude>.*\.bat</exclude>
+		<exclude>.*\.bin</exclude>
+		<exclude>.*\.bmp</exclude>
+		<exclude>.*\.cmd</exclude>
+		<exclude>.*\.dll</exclude>
+		<exclude>.*\.doc</exclude>
+		<exclude>.*\.exe</exclude>
+		<exclude>.*\.gif</exclude>
+		<exclude>.*\.jpg</exclude>
+		<exclude>.*\.lib</exclude>
+		<exclude>.*\.log</exclude>
+		<exclude>.*\.mbm</exclude>
+		<exclude>.*\.mp3</exclude>
+		<exclude>.*\.mpg</exclude>
+		<exclude>.*\.png</exclude>
+		<exclude>.*\.raw</exclude>
+		<exclude>.*\.rtf</exclude>
+		<exclude>.*\.tif</exclude>
+		<exclude>.*\.wav</exclude>
+		<exclude>.*\.wbmp</exclude>
+		<exclude>.*\.wmf</exclude>
+		<exclude>.*\.xls</exclude>
+		<exclude>.*\.zip</exclude>
+	</sources>
+
+	<scripts>
+		<!-- Every element in this section corresponds to a Codescanner script -->
+		<!-- Every element has the following common attributes: -->
+		<!--    category="canpanic", "codereview", "codingstandards", -->
+		<!--             "documentation", "functionality", "legal", -->
+		<!--             "localisation", "other", "panic" or "perfromance" -->
+		<!--    enable="true" or "false" -->
+		<!--	severity="high", "medium" or "low" -->
+		<!-- Some scripts have additional attributes or elements. -->
+
+		<accessArrayElementWithoutCheck category="codereview" enable="true" severity="low"/>
+		<accessArrayElementWithoutCheck2 category="codereview" enable="true" severity="low"/>
+		<activestart category="codereview" enable="true" severity="low"/>
+		<activestop category="codereview" enable="true" severity="low"/>
+		<arraypassing category="performance" enable="true" severity="medium"/>
+		<arrayptrcleanup category="codereview" enable="true" severity="low"/>
+		<assertdebuginvariant category="codingstandards" enable="true" severity="low"/>
+		<baddefines category="codingstandards" enable="true" severity="low"/>
+		<baseconstruct category="codereview" enable="true" severity="low"/>
+		<callActiveObjectWithoutCheckingOrStopping category="codereview" enable="true" severity="low"/>
+		<changenotification category="codereview" enable="true" severity="low"/>
+		<cleanup category="codingstandards" enable="true" severity="low"/>
+		<commentcode category="codereview" enable="true" severity="low"/>
+		<connect category="canpanic" enable="true" severity="high"/>
+		<ConnectAndDontCloseMemberVariable category="functionality" enable="true" severity="medium"/>
+		<constnames category="codingstandards" enable="true" severity="low"/>
+		<consttdescptr category="codingstandards" enable="true" severity="low"/>
+		<controlornull category="canpanic" enable="true" severity="high"/>
+		<crepository category="other" enable="true" severity="low"/>
+		<ctltargettype category="functionality" enable="true" severity="medium"/>
+		<customizableicons category="other" enable="true" severity="low">
+			<iconsRE></iconsRE>
+		</customizableicons>
+		<debugrom category="performance" enable="true" severity="medium"/>
+		<declarename category="codingstandards" enable="true" severity="low"/>
+		<deleteMemberVariable category="canpanic" enable="true" severity="high"/>
+		<destructor category="canpanic" enable="true" severity="high"/>
+		<doubleSemiColon category="codereview" enable="true" severity="low"/>
+		<driveletters category="codingstandards" enable="true" severity="low"/>
+		<eikbuttons category="localisation" enable="true" severity="medium"/>
+		<eikonenvstatic category="performance" enable="true" severity="medium"/>
+		<enummembers category="codingstandards" enable="true" severity="low"/>
+		<enumnames category="codingstandards" enable="true" severity="low"/>
+		<exportinline category="functionality" enable="true" severity="medium"/>
+		<exportpurevirtual category="functionality" enable="true" severity="medium"/>
+		<flags category="other" enable="true" severity="low"/>
+		<foff category="codereview" enable="true" severity="low"/>
+		<forbiddenwords category="codingstandards" enable="true" severity="low">
+			<wordsRE>Typhoon|Hurricane|HelloWorld|Calypso|Rubik|Epoc|Nokia Mobile Phones|NMP|Mobile Innovation|(^|\s)S90|(^|\s)S80|(^|\s)S60</wordsRE>
+		</forbiddenwords>
+		<forgottoputptroncleanupstack category="codereview" enable="true" severity="low"/>
+		<friend category="codereview" enable="true" severity="low"/>
+		<goto category="codingstandards" enable="true" severity="low"/>
+		<ifassignments category="codingstandards" enable="true" severity="low"/>
+		<ifpreprocessor category="codingstandards" enable="true" severity="low"/>
+		<inheritanceorder category="canpanic" enable="true" severity="high"/>
+		<intleaves category="codereview" enable="true" severity="low"/>
+		<jmp category="codingstandards" enable="true" severity="low"/>
+		<leave category="canpanic" enable="true" severity="high"/>
+		<LeaveNoError category="functionality" enable="true" severity="medium"/>
+		<leavingoperators category="codereview" enable="true" severity="low"/>
+		<LFunctionCantLeave category="codereview" enable="true" severity="low">
+			<LFunctionIgnoreRE>RunL</LFunctionIgnoreRE>
+		</LFunctionCantLeave>
+		<longlines category="codingstandards" enable="true" length="160" severity="low"/>
+		<magicnumbers category="codingstandards" enable="true" severity="low"/>
+		<mclassdestructor category="codingstandards" enable="true" severity="low"/>
+		<memberlc category="canpanic" enable="true" severity="high"/>
+		<membervariablecallld category="codingstandards" enable="true" severity="low"/>
+		<missingcancel category="codingstandards" enable="true" severity="low"/>
+		<missingcclass category="canpanic" enable="true" severity="high">
+			<cclassIgnoreRE>CBase</cclassIgnoreRE>
+		</missingcclass>
+		<mmpsourcepath category="codingstandards" enable="true" severity="low"/>
+		<multilangrsc category="codereview" enable="true" severity="low"/>
+		<multipledeclarations category="codingstandards" enable="true" severity="low"/>
+		<multipleinheritance category="functionality" enable="true" severity="medium"/>
+		<mydocs category="functionality" enable="true" severity="medium"/>
+		<namespace category="codingstandards" enable="true" severity="low"/>
+		<newlreferences category="codingstandards" enable="true" severity="low"/>
+		<noleavetrap category="codereview" enable="true" severity="low"/>
+		<nonconsthbufc category="codingstandards" enable="true" severity="low"/>
+		<nonconsttdesc category="codingstandards" enable="true" severity="low"/>
+		<nonleavenew category="codereview" enable="true" severity="low"/>
+		<nonunicodeskins category="codereview" enable="true" severity="low"/>
+		<null category="codingstandards" enable="true" severity="low"/>
+		<open category="canpanic" enable="true" severity="high">
+			<openIgnoreRE>RDesReadStream|RDesWriteStream</openIgnoreRE>
+		</open>
+		<pointertoarrays category="performance" enable="true" severity="medium"/>
+		<pragmadisable category="codingstandards" enable="true" severity="low"/>
+		<pragmamessage category="codingstandards" enable="true" severity="low"/>
+		<pragmaother category="codereview" enable="true" severity="low"/>
+		<privateinheritance category="codingstandards" enable="true" severity="low"/>
+		<pushaddrvar category="canpanic" enable="true" severity="high"/>
+		<pushmember category="canpanic" enable="true" severity="high"/>
+		<readresource category="canpanic" enable="true" severity="high"/>
+		<resourcenotoncleanupstack category="codereview" enable="true" severity="low"/>
+		<resourcesonheap category="codingstandards" enable="true" severity="low"/>
+		<returndescriptoroutofscope category="canpanic" enable="true" severity="high"/>
+		<rfs category="codereview" enable="true" severity="low"/>
+		<rssnames category="codereview" enable="true" severity="low"/>
+		<stringliterals category="codingstandards" enable="true" severity="low"/>
+		<stringsinresourcefiles category="codereview" enable="true" severity="low"/>
+		<struct category="codingstandards" enable="true" severity="low"/>
+		<tcclasses category="functionality" enable="true" severity="medium"/>
+		<tclassdestructor category="codingstandards" enable="true" severity="low"/>
+		<todocomments category="codereview" enable="true" severity="low"/>
+		<trapcleanup category="panic" enable="true" severity="high"/>
+		<trapeleave category="performance" enable="true" severity="medium"/>
+		<traprunl category="codingstandards" enable="true" severity="low"/>
+		<trspassing category="functionality" enable="true" severity="medium"/>
+		<uids category="codereview" enable="true" severity="low"/>
+		<uncompressedaif category="performance" enable="true" severity="medium"/>
+		<uncompressedbmp category="performance" enable="true" severity="medium"/>
+		<unicodesource category="codereview" enable="true" severity="low"/>
+		<userafter category="performance" enable="true" severity="medium"/>
+		<userfree category="codereview" enable="true" severity="low"/>
+		<userWaitForRequest category="codereview" enable="true" severity="low"/>
+		<variablenames category="codingstandards" enable="true" severity="low"/>
+		<voidparameter category="codingstandards" enable="true" severity="low"/>
+		<worryingcomments category="codereview" enable="true" severity="low">
+			<worryRE>\!|\?|[Zz]{3}|kludge|workaround|\scrap|hack</worryRE>
+		</worryingcomments>
+	</scripts>
+
+	<severities>
+		<!-- Group scripts based on severity level: -->
+		<!--    enable="true" or "false" -->
+
+		<high enable="true"/>
+		<medium enable="true"/>
+		<low enable="true"/>
+	</severities>
+
+	<categories>
+		<!-- Group scripts based on category: -->
+		<!--    enable="true" or "false" -->
+
+		<canpanic enable="true"/>
+		<codereview enable="true"/>
+		<codingstandards enable="true"/>
+		<documentation enable="true"/>
+		<functionality enable="true"/>
+		<legal enable="true"/>
+		<localisation enable="true"/>
+		<other enable="true"/>
+		<panic enable="true"/>
+		<performance enable="true"/>
+	</categories>
+</codescannerConfig>
